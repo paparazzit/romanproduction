@@ -1,38 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<title>Document</title>
-	</head>
-	<body>
-		<header class="header">
-			<nav id="nav">
-				<div class="logo"><img src="./logo3-white.png" alt="" /></div>
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Staf</a></li>
-				</ul>
-			</nav>
-			<div class="slider-container">
-				<div class="slide active" style="background-image: url('./hero.jpg')">
-					<h2>CREATE TRUE STORIES</h2>
-				</div>
-				<div class="slide" style="background-image: url('./lol.jpg')">
-					<h2>create wonders</h2>
-				</div>
-				<button class="arrow left-arrow" id="left">&#8810;</button>
-				<button class="arrow right-arrow" id="right">&#8811;</button>
-			</div>
-		</header>
-		<section class="header">
-			<h1>ok</h1>
-		</section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav id="nav">
+        <div class="logo"><img src="./logo3-white.png" alt="" /></div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Staf</a></li>
+        </ul>
+      </nav>
+      <div class="slider-container">
+        <div class="slide active" style="background-image: url('./hero.jpg')">
+          <p>CREATE TRUE STORIES</p>
+        </div>
+        <div class="slide" style="background-image: url('./lol.jpg')">
+          <p>create wonders</p>
+        </div>
+        <button class="arrow left-arrow" id="left">
+          <img src="arr2.svg" alt="" />
+        </button>
+        <button class="arrow right-arrow" id="right">
+          <img src="arr.svg" alt="" />
+        </button>
+      </div>
+    </header>
+    <section class="intro">
+      <h2>This one is for you</h2>
+      <p class="intro__lead">We Want To Tell You Our Story</p>
+      <article class="intro__text">
+        <div class="intro__who">
+          <h3>who</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            architecto unde perspiciatis illum doloribus corrupti voluptatibus
+            exercitationem, ducimus quia. Optio, ex nemo? A enim, quaerat iste
+            eligendi nobis praesentium ut fugiat assumenda consequatur sed
+            quidem nostrum, porro voluptates sapiente voluptas!
+          </p>
+        </div>
+        <div class="intro__why">
+          <h3>why</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            architecto unde perspiciatis illum doloribus corrupti voluptatibus
+            exercitationem, ducimus quia. Optio, ex nemo? A enim, quaerat iste
+            eligendi nobis praesentium ut fugiat assumenda consequatur sed
+            quidem nostrum, porro voluptates sapiente voluptas!
+          </p>
+        </div>
+        <div class="intro__what">
+          <h3>what</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            architecto unde perspiciatis illum doloribus corrupti voluptatibus
+            exercitationem, ducimus quia. Optio, ex nemo? A enim, quaerat iste
+            eligendi nobis praesentium ut fugiat assumenda consequatur sed
+            quidem nostrum, porro voluptates sapiente voluptas!
+          </p>
+        </div>
+      </article>
+      <button class="intro__cta">Get started</button>
+    </section>
+    <section class="quote">
+      <p class="quote__text">“This is only the beginning of our journey”</p>
+    </section>
+    <section class="services">
+      <h2>Services</h2>
+      <p class="services__lead">We Always Provide Best Quality</p>
+      <article class="services__text">
+        <div>
+          <img src="movie.svg" alt="" />
+          <h3>Film</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda,
+            tenetur! Officia repudiandae ea ab expedita corrupti nemo a enim
+            autem!
+          </p>
+        </div>
+        <div>
+          <img src="media.svg" alt="" />
 
-		<script src="main.js"></script>
-	</body>
+          <h3>Media</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda,
+            tenetur! Officia repudiandae ea ab expedita corrupti nemo a enim
+            autem!
+          </p>
+        </div>
+        <div>
+          <img src="tv.svg" alt="" />
+
+          <h3>Youtube</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda,
+            tenetur! Officia repudiandae ea ab expedita corrupti nemo a enim
+            autem!
+          </p>
+        </div>
+      </article>
+    </section>
+    <section class="work">
+      <h2>our work</h2>
+      <p class="work__lead">Featured projects</p>
+      <div class="work__items">
+        <div class="item">
+          <h4>Crveni Mesec</h4>
+        </div>
+        <div class="item">
+          <h4>Crveni Mesec</h4>
+        </div>
+        <div class="item">
+          <h4>Crveni Mesec</h4>
+        </div>
+        <div class="item">
+          <h4>Crveni Mesec</h4>
+        </div>
+        <div class="item">
+          <h4>Crveni Mesec</h4>
+        </div>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
 </html>
