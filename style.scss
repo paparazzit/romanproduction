@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,500&display=swap");
+// VARIABLES
+$mainFont: "Raleway", sans-serif;
+$sublineFont: "Crimson Text", serif;
+$primary: #1f1f1f;
+$accents: #b7a379;
+$lightGray: #f3f3f3;
+$borderColor: #b9b9b9;
+$fontLight: #6b6b6b;
+$sectionPadding: 80px 0;
+$spacer: 25px;
+$fontSize: 16px;
+$transition: 0.4s all ease-in-out;
+
+// GENERALS
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style-type: none;
+}
+.subline {
+	font-family: $sublineFont;
+	font-size: $fontSize;
+	font-style: italic;
+}
+@mixin btn(
+	$background,
+	$backgroundHover,
+	$color,
+	$colorHover,
+	$border,
+	$borderHover
+) {
+	padding: 15px 30px;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	background-color: $background;
+	transition: $transition;
+	border: 1px solid $border;
+	color: $color;
+	&:hover {
+		background-color: $backgroundHover;
+		color: $colorHover;
+		border: 1px solid $borderHover;
+	}
+}
+
+// MINIXS
+
+body {
+	font-family: $mainFont;
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+}
+header {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: transparentize(#222222, 0.7);
+		z-index: 0;
+	}
+	nav {
+		margin-top: auto;
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		padding: 0 10rem;
+		background-color: #222222;
+		height: auto;
+		display: flex;
+		align-items: center;
+		.logo {
+			flex: 0 0 30%;
+			img {
+				width: 50px;
+			}
+		}
+		ul {
+			flex-grow: 1;
+			display: flex;
+			justify-content: space-evenly;
+			li {
+				padding: 15px 40px;
+				position: relative;
+				a {
+					font-size: 1rem;
+					color: #f1faff;
+					letter-spacing: 1.5px;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+					left: 0;
+					transform: scaleY(0);
+					transform-origin: bottom;
+					opacity: 0;
+					border-bottom: 5px solid #2f6b78;
+
+					transition: 0.5s ease;
+				}
+				&:hover {
+					background-color: #f1faff;
+					a {
+						color: #333333;
+					}
+					&::after {
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
+			}
+			> * + * {
+				margin-left: 3rem;
+			}
+		}
+		&.fixed-nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+	}
+	.slider-container {
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 8px rgba(0, 0, 0, 0.16);
+		height: 70vh;
+		width: 70vw;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+		overflow: hidden;
+		.slide {
+			opacity: 0;
+			height: 100vh;
+			width: 100vw;
+			background-position: center;
+			background-size: cover;
+			position: absolute;
+			top: -15vh;
+			left: -15vw;
+			z-index: 1;
+			transition: 0.5s ease-in;
+			&.active {
+				opacity: 1;
+				h2 {
+					opacity: 1;
+				}
+			}
+			h2 {
+				position: absolute;
+				z-index: 2;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 3.5rem;
+				text-transform: uppercase;
+				text-shadow: 2px 2px 8px black;
+				color: #fff;
+				letter-spacing: 2px;
+				font-weight: 600;
+				opacity: 0;
+				transition: 0.5s ease-in;
+			}
+		}
+		.arrow {
+			position: inherit;
+			background-color: transparent;
+			padding: 20px;
+			font-size: 30px;
+			border: none;
+			color: #aeaeae;
+			z-index: 2;
+			top: 50%;
+			transform: translateY(-50%);
+			cursor: pointer;
+			&.right-arrow {
+				left: calc(70vw - 60px);
+			}
+			&.left-arrow {
+				right: calc(70vw - 60px);
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.header {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
