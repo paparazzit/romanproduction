@@ -34,6 +34,7 @@ rightBtn.addEventListener("click", () => {
   setBgToBody();
   setActiveSlide();
 });
+
 leftBtn.addEventListener("click", () => {
   activeSlide--;
 
@@ -150,4 +151,33 @@ $("#team_slider").owlCarousel({
       items: 4,
     },
   },
+});
+
+$("#news_slider").owlCarousel({
+  loop: false,
+  margin: 50,
+  nav: false,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    800: {
+      items: 2,
+    },
+    1000: {
+      items: 3,
+    },
+  },
+});
+
+$(".news_img").on("click", function (event) {
+  var $this = $(this);
+  if ($this.hasClass("active_news_img")) {
+    $this.removeClass("active_news_img");
+  } else {
+    $this.addClass("active_news_img");
+  }
 });

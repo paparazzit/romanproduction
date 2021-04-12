@@ -191,6 +191,7 @@ header {
     padding: 0 10rem;
     background-color: $primary;
     height: auto;
+    height: auto;
     ul {
       @include container();
       display: flex;
@@ -441,6 +442,29 @@ header {
 .news {
   &__lead {
     @extend .intro__lead;
+  }
+  .news__lead {
+    margin-bottom: 50px;
+  }
+  .owl-carousel {
+    width: 80%;
+    margin: 0 auto;
+    .item {
+      padding: 0 20px;
+      &__lead {
+        @extend .intro__lead;
+        margin: 10px 0;
+      }
+      .item_text {
+        padding: 20px;
+        background-color: $lightGray;
+        a {
+          color: $fontLight;
+          margin-top: 15px;
+          display: inline-block;
+        }
+      }
+    }
   }
 }
 
@@ -730,5 +754,88 @@ footer {
     font-family: $mainFont;
     margin-top: 30px;
     font-size: 1.5rem;
+  }
+}
+
+/******************
+NEWS PAGES
+******************/
+.header.news {
+  position: relative;
+  height: 30vh;
+  display: block;
+  background: $accents;
+  background-position: top;
+  background-size: cover;
+
+  &::before {
+    display: none;
+  }
+  nav {
+    margin-top: 0;
+  }
+
+  hgroup {
+    color: $lightGray;
+    .news__lead {
+      text-align: center;
+      color: $lightGray;
+    }
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -80%);
+  }
+}
+.news_page {
+  @include container;
+  padding-top: 40px;
+
+  .news_thumbnail {
+    width: 80%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .news_page_content {
+    margin-top: 40px;
+    .news_content {
+      margin-top: 20px;
+      border-top: 1px solid $fontLight;
+      padding: 20px;
+      p {
+        margin-bottom: 20px;
+      }
+    }
+    .gallery {
+      flex-wrap: wrap;
+      .col-2 {
+        padding: 0 20px;
+        margin-bottom: 20px;
+        min-width: 150px;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+  .news_nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: $fontLight;
+      display: inline-block;
+
+      padding: 10px 20px;
+      transition: $transition;
+      &:hover {
+        color: $lightGray;
+        background-color: $accents;
+      }
+    }
   }
 }
