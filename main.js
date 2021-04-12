@@ -127,9 +127,12 @@ items.forEach((item) => {
 closePop.addEventListener("click", () => {
   popup.classList.remove("active");
 });
+header.addEventListener("click", () => {
+  popup.classList.remove("active");
+});
 
 // team owl
-$(".owl-carousel").owlCarousel({
+$("#team_slider").owlCarousel({
   loop: true,
   margin: 10,
   nav: false,

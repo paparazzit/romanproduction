@@ -16,20 +16,30 @@
       integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>Roman Production</title>
   </head>
   <body>
     <!-- header -->
-    <header class="header">
+    <header id="home" class="header">
       <nav id="nav">
-        <div class="logo"><img src="./logo3-white.png" alt="" /></div>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Staf</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Projects</a></li>
+
+          <div class="logo"><img src="./roman_logo.svg" alt="" /></div>
+
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="slider-container">
@@ -57,7 +67,7 @@
     </header>
 
     <!-- intro -->
-    <section class="intro">
+    <section id="about" class="intro">
       <h2>This one is for you</h2>
       <p class="intro__lead">We Want To Tell You Our Story</p>
       <article class="intro__text">
@@ -99,7 +109,9 @@
     <section class="quote">
       <p class="quote__text">“This is only the beginning of our journey”</p>
     </section>
-    <section class="services">
+
+    <!-- services -->
+    <section id="services" class="services">
       <h2>Services</h2>
       <p class="services__lead">We Always Provide Best Quality</p>
       <article class="services__text">
@@ -114,7 +126,6 @@
         </div>
         <div>
           <img src="media.svg" alt="" />
-
           <h3>Media</h3>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda,
@@ -133,30 +144,9 @@
         </div>
       </article>
     </section>
-    <section class="work">
-      <h2>our work</h2>
-      <p class="work__lead">Featured projects</p>
-      <div class="work__items">
-        <div class="item">
-          <h4>Crveni Mesec</h4>
-        </div>
-        <div class="item">
-          <h4>Crveni Mesec</h4>
-        </div>
-        <div class="item">
-          <h4>Crveni Mesec</h4>
-        </div>
-        <div class="item">
-          <h4>Crveni Mesec</h4>
-        </div>
-        <div class="item">
-          <h4>Crveni Mesec</h4>
-        </div>
-      </div>
-    </section>
 
     <!-- work -->
-    <section class="work">
+    <section id="work" class="work">
       <h2>our work</h2>
       <p class="work__lead">Featured projects</p>
       <div class="work__items">
@@ -179,7 +169,7 @@
     </section>
 
     <!-- reviews -->
-    <section class="reviews">
+    <section id="reviews" class="reviews">
       <h2>reviews</h2>
       <p class="reviews__text">
         Awesome theme, I really enjoy it! Design is so good and neat. Tons of
@@ -189,10 +179,10 @@
     </section>
 
     <!-- team -->
-    <section class="team">
+    <section id="team" class="team">
       <h2>our team</h2>
       <p class="team__lead">Creative minds. All in One.</p>
-      <div class="owl-carousel owl-theme">
+      <div class="owl-carousel owl-theme" id="team_slider">
         <div class="item popup-item">
           <img src="https://source.unsplash.com/QJkvX0skiqs" alt="" />
         </div>
@@ -249,13 +239,13 @@
     </section>
 
     <!-- NEWS -->
-    <section class="news">
+    <section id="news" class="news">
       <h2>News</h2>
       <p class="news__lead">Latest news from our production</p>
     </section>
 
     <!-- CONTACT -->
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2>Contact</h2>
       <p class="contact__lead">Don’t Hesitate to Drop Us a Line</p>
       <div class="contact_wrapper">
@@ -353,13 +343,4 @@
     ></script>
     <script src="main.js"></script>
   </body>
-  <!-- <h3>Youtube</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda,
-            tenetur! Officia repudiandae ea ab expedita corrupti nemo a enim
-            autem!
-          </p>
-        </div>
-      </article>
-    </section> -->
 </html>

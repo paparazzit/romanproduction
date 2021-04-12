@@ -90,10 +90,12 @@ $transition: 0.4s all ease-in-out;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: $mainFont;
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 body {
   position: relative;
@@ -189,22 +191,22 @@ header {
     padding: 0 10rem;
     background-color: $primary;
     height: auto;
-    display: flex;
-    align-items: center;
-    .logo {
-      flex: 0 0 30%;
-      img {
-        width: 50px;
-      }
-    }
     ul {
-      flex-grow: 1;
+      @include container();
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        margin: auto 50px;
+        img {
+          width: 140px;
+          filter: invert(100%);
+        }
+      }
       li {
-        padding: 15px 40px;
+        padding: 20px 15px;
         position: relative;
-        // overflow: hidden;
+        overflow: hidden;
         a {
           font-size: 1rem;
           color: $lightGray;
@@ -229,13 +231,16 @@ header {
             color: $primary;
           }
           &::after {
-            transform: scale(1);
+            transform: scale(1.3);
             opacity: 1;
           }
         }
+        &:nth-child(5) {
+          margin-left: 0;
+        }
       }
       > * + * {
-        margin-left: 3rem;
+        margin-left: 0.2em;
       }
     }
     &.fixed-nav {
@@ -580,8 +585,33 @@ footer {
   @include container();
   .item {
     cursor: pointer;
+    position: relative;
     &:hover {
-      background: linear-gradient(black, 0.5);
+      //   // background: linear-gradient(black, 0.5);
+      &::after {
+        content: "";
+        position: absolute;
+        background: rgba($primary, 0.7);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 800;
+        font-size: 2rem;
+        content: "\f424";
+        position: absolute;
+        z-index: 2;
+        color: $lightGray;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid $lightGray;
+        border-radius: 50%;
+        padding: 5px 8px;
+      }
     }
   }
 }
