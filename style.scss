@@ -35,10 +35,12 @@ $transition: 0.4s all ease-in-out;
     border: 1px solid $borderHover;
   }
 }
-@mixin btn2 {
+@mixin btn2($border-clr) {
   padding: 1rem 1.5rem;
   font-size: 0.85rem;
+  font-family: $mainFont;
   text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
   display: block;
   margin: 5em auto;
@@ -51,7 +53,7 @@ $transition: 0.4s all ease-in-out;
     position: absolute;
     width: 20%;
     height: 20%;
-    border: 2px solid $primary;
+    border: 2px solid $border-clr;
     transition: 0.5s ease;
   }
   &::before {
@@ -69,8 +71,8 @@ $transition: 0.4s all ease-in-out;
   &:hover {
     &::after,
     &::before {
-      width: 103%;
-      height: 103%;
+      width: 105%;
+      height: 108%;
     }
   }
 }
@@ -80,7 +82,9 @@ $transition: 0.4s all ease-in-out;
 }
 
 // GENERALS
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -128,6 +132,10 @@ h3 {
   font-size: 1.4rem;
   text-transform: uppercase;
 }
+h4 {
+  font-size: 1.6rem;
+  color: $primary;
+}
 p {
   color: $fontLight;
   line-height: 1.5;
@@ -169,13 +177,13 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: transparentize($primary, 0.7);
+    background-color: transparentize($primary, 0.4);
     z-index: 0;
   }
   nav {
     margin-top: auto;
     position: relative;
-    z-index: 2;
+    z-index: 11;
     width: 100%;
     padding: 0 10rem;
     background-color: $primary;
@@ -195,7 +203,7 @@ header {
       li {
         padding: 15px 40px;
         position: relative;
-        overflow: hidden;
+        // overflow: hidden;
         a {
           font-size: 1rem;
           color: $lightGray;
@@ -204,7 +212,7 @@ header {
         &::after {
           content: "";
           position: absolute;
-          box-sizing: border-box;
+          //   box-sizing: border-box;
           width: 100%;
           bottom: 0;
           left: 0;
@@ -220,7 +228,7 @@ header {
             color: $primary;
           }
           &::after {
-            transform: scale(1.2);
+            transform: scale(1);
             opacity: 1;
           }
         }
@@ -237,7 +245,7 @@ header {
     }
   }
   .slider-container {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 8px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.2);
     height: 70vh;
     width: 70vw;
     top: 50%;
@@ -271,7 +279,7 @@ header {
         transform: translate(-50%, -50%);
         font-size: 3.5rem;
         text-transform: uppercase;
-        text-shadow: 2px 2px 8px black;
+        text-shadow: 3px -3px 4px black;
         color: #fff;
         letter-spacing: 2px;
         font-weight: 600;
@@ -321,14 +329,14 @@ header {
     }
   }
   &__cta {
-    @include btn2();
+    @include btn2($primary);
   }
 }
 // QOUTE
 .quote {
   height: 50vh;
   background-image: linear-gradient(rgba($primary, 0.6), rgba($primary, 0.6)),
-    url(https://source.unsplash.com/random);
+    url(https://source.unsplash.com/atsUqIm3wxo);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -371,8 +379,9 @@ header {
     flex-wrap: wrap;
     margin-top: 30px;
     .item {
-      background-image: url(https://source.unsplash.com/random);
-      background-position: top left;
+      background-image: linear-gradient(rgba(black, 0.6), rgba(black, 0.6)),
+        url(https://source.unsplash.com/KieCLNzKoBo);
+      background-position: center;
       background-size: cover;
       margin: 1rem;
       width: 250px;
@@ -385,6 +394,7 @@ header {
         margin: 40px 0 10px;
         color: #fff;
         letter-spacing: 1px;
+        font-size: 1.3rem;
       }
 
       &::after {
@@ -418,5 +428,137 @@ header {
         }
       }
     }
+  }
+}
+
+// TEAM
+.team {
+  &__lead {
+    @extend .intro__lead;
+    padding-bottom: 50px;
+  }
+  @include container();
+  .item {
+    cursor: pointer;
+    &:hover {
+      background: linear-gradient(black, 0.5);
+    }
+  }
+}
+
+// POPUP
+.popup {
+  display: none;
+  &.active {
+    padding: 80px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    h4 {
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+    .popup__desc {
+      @include container();
+      display: flex;
+      justify-content: space-around;
+      height: 60vh;
+
+      .img {
+        flex: 0 0 40%;
+
+        margin-bottom: auto;
+        img {
+          width: 100%;
+        }
+      }
+      .info {
+        flex: 0 0 40%;
+        margin-top: auto;
+        color: black;
+        .popup__position {
+          // font-style: italic;
+          @extend .intro__lead;
+          font-size: 1.5rem;
+          margin-bottom: 60px;
+          text-align: center;
+        }
+      }
+    }
+    #close {
+      font-size: 2rem;
+      position: inherit;
+      top: 10%;
+      right: 20%;
+      cursor: pointer;
+    }
+  }
+}
+
+// CTA
+.cta {
+  background-color: $primary;
+  p:first-of-type {
+    color: $lightGray;
+    font-size: 2.5rem;
+    font-family: $sublineFont;
+    background-color: $primary;
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      border-top: 2px solid $lightGray;
+      width: 150px;
+      margin: 0 0.8em;
+      position: relative;
+      top: -0.6rem;
+    }
+  }
+  p:last-of-type {
+    color: $lightGray;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-size: 3.5rem;
+    font-weight: bolder;
+  }
+  button {
+    @include btn2($lightGray);
+    color: $lightGray;
+    margin-bottom: 0;
+  }
+}
+
+// REVIEWS
+.reviews {
+  background-image: linear-gradient(rgba(black, 0.6), rgba(black, 0.6)),
+    url(https://source.unsplash.com/ZpE2gobovro);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  h2 {
+    color: $lightGray;
+    &::after {
+      display: none;
+    }
+  }
+  &__text {
+    color: $lightGray;
+    font-family: $sublineFont;
+    font-size: 2rem;
+    margin-top: 50px;
+  }
+  &__per {
+    color: $lightGray;
+    font-family: $mainFont;
+    margin-top: 30px;
+    font-size: 1.5rem;
   }
 }

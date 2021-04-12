@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,600&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,500&display=swap");
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -57,6 +59,11 @@ h2::after {
 h3 {
   font-size: 1.4rem;
   text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.6rem;
+  color: #1f1f1f;
 }
 
 p {
@@ -219,14 +226,14 @@ header::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(31, 31, 31, 0.3);
+  background-color: rgba(31, 31, 31, 0.6);
   z-index: 0;
 }
 
 header nav {
   margin-top: auto;
   position: relative;
-  z-index: 2;
+  z-index: 11;
   width: 100%;
   padding: 0 10rem;
   background-color: #1f1f1f;
@@ -264,7 +271,6 @@ header nav ul {
 header nav ul li {
   padding: 15px 40px;
   position: relative;
-  overflow: hidden;
 }
 
 header nav ul li a {
@@ -276,8 +282,6 @@ header nav ul li a {
 header nav ul li::after {
   content: "";
   position: absolute;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -300,8 +304,8 @@ header nav ul li:hover a {
 }
 
 header nav ul li:hover::after {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 
@@ -317,8 +321,8 @@ header nav.fixed-nav {
 }
 
 header .slider-container {
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 8px rgba(0, 0, 0, 0.16);
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 8px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.2);
   height: 70vh;
   width: 70vw;
   top: 50%;
@@ -361,7 +365,7 @@ header .slider-container .slide p {
           transform: translate(-50%, -50%);
   font-size: 3.5rem;
   text-transform: uppercase;
-  text-shadow: 2px 2px 8px black;
+  text-shadow: 3px -3px 4px black;
   color: #fff;
   letter-spacing: 2px;
   font-weight: 600;
@@ -404,7 +408,7 @@ header .slider-container .arrow:hover {
   margin: auto;
 }
 
-.intro__lead, .services__lead, .work__lead {
+.intro__lead, .services__lead, .work__lead, .team__lead, .popup.active .popup__desc .info .popup__position {
   font-style: italic;
   margin-top: 30px;
   font-size: 1.2rem;
@@ -423,7 +427,9 @@ header .slider-container .arrow:hover {
 .intro__cta {
   padding: 1rem 1.5rem;
   font-size: 0.85rem;
+  font-family: "Raleway", sans-serif;
   text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
   display: block;
   margin: 5em auto;
@@ -457,14 +463,14 @@ header .slider-container .arrow:hover {
 }
 
 .intro__cta:hover::after, .intro__cta:hover::before {
-  width: 103%;
-  height: 103%;
+  width: 105%;
+  height: 108%;
 }
 
 .quote {
   height: 50vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(31, 31, 31, 0.6)), to(rgba(31, 31, 31, 0.6))), url(https://source.unsplash.com/random);
-  background-image: linear-gradient(rgba(31, 31, 31, 0.6), rgba(31, 31, 31, 0.6)), url(https://source.unsplash.com/random);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(31, 31, 31, 0.6)), to(rgba(31, 31, 31, 0.6))), url(https://source.unsplash.com/atsUqIm3wxo);
+  background-image: linear-gradient(rgba(31, 31, 31, 0.6), rgba(31, 31, 31, 0.6)), url(https://source.unsplash.com/atsUqIm3wxo);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -515,8 +521,9 @@ header .slider-container .arrow:hover {
 }
 
 .work__items .item {
-  background-image: url(https://source.unsplash.com/random);
-  background-position: top left;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(https://source.unsplash.com/KieCLNzKoBo);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://source.unsplash.com/KieCLNzKoBo);
+  background-position: center;
   background-size: cover;
   margin: 1rem;
   width: 250px;
@@ -531,6 +538,7 @@ header .slider-container .arrow:hover {
   margin: 40px 0 10px;
   color: #fff;
   letter-spacing: 1px;
+  font-size: 1.3rem;
 }
 
 .work__items .item::after {
@@ -560,5 +568,196 @@ header .slider-container .arrow:hover {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.team {
+  width: calc(min(1140px, 90%));
+  margin: auto;
+}
+
+.team__lead {
+  padding-bottom: 50px;
+}
+
+.team .item {
+  cursor: pointer;
+}
+
+.team .item:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(0.5));
+  background: linear-gradient(black, 0.5);
+}
+
+.popup {
+  display: none;
+}
+
+.popup.active {
+  padding: 80px;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #fff;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.popup.active h4 {
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.popup.active .popup__desc {
+  width: calc(min(1140px, 90%));
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 60vh;
+}
+
+.popup.active .popup__desc .img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  margin-bottom: auto;
+}
+
+.popup.active .popup__desc .img img {
+  width: 100%;
+}
+
+.popup.active .popup__desc .info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  margin-top: auto;
+  color: black;
+}
+
+.popup.active .popup__desc .info .popup__position {
+  font-size: 1.5rem;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.popup.active #close {
+  font-size: 2rem;
+  position: inherit;
+  top: 10%;
+  right: 20%;
+  cursor: pointer;
+}
+
+.cta {
+  background-color: #1f1f1f;
+}
+
+.cta p:first-of-type {
+  color: #f3f3f3;
+  font-size: 2.5rem;
+  font-family: "Crimson Text", serif;
+  background-color: #1f1f1f;
+}
+
+.cta p:first-of-type::before, .cta p:first-of-type::after {
+  content: "";
+  display: inline-block;
+  border-top: 2px solid #f3f3f3;
+  width: 150px;
+  margin: 0 0.8em;
+  position: relative;
+  top: -0.6rem;
+}
+
+.cta p:last-of-type {
+  color: #f3f3f3;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-size: 3.5rem;
+  font-weight: bolder;
+}
+
+.cta button {
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: block;
+  margin: 5em auto;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  color: #f3f3f3;
+  margin-bottom: 0;
+}
+
+.cta button::after, .cta button::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid #f3f3f3;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.cta button::before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+.cta button::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.cta button:hover::after, .cta button:hover::before {
+  width: 105%;
+  height: 108%;
+}
+
+.reviews {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(https://source.unsplash.com/ZpE2gobovro);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://source.unsplash.com/ZpE2gobovro);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.reviews h2 {
+  color: #f3f3f3;
+}
+
+.reviews h2::after {
+  display: none;
+}
+
+.reviews__text {
+  color: #f3f3f3;
+  font-family: "Crimson Text", serif;
+  font-size: 2rem;
+  margin-top: 50px;
+}
+
+.reviews__per {
+  color: #f3f3f3;
+  font-family: "Raleway", sans-serif;
+  margin-top: 30px;
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=style.css.map */
