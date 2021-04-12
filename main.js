@@ -5,6 +5,9 @@ const navHeight = nav.getBoundingClientRect().height;
 const slides = document.querySelectorAll(".slide");
 const leftBtn = document.getElementById("left");
 const rightBtn = document.getElementById("right");
+const items = document.querySelectorAll(".popup-item");
+const closePop = document.querySelector("#close");
+const popup = document.querySelector(".popup");
 
 let activeSlide = 0;
 
@@ -62,6 +65,7 @@ const slideTimer = setInterval(function () {
 	setActiveSlide();
 }, 5000);
 
+<<<<<<< HEAD
 // MAPS
 const map = document.querySelector(".map_container");
 const map_toggle = document.querySelectorAll(".office");
@@ -115,3 +119,35 @@ function removeActiveOffice() {
 		tgl.classList.remove("active_office");
 	});
 }
+=======
+// team popup
+items.forEach((item) => {
+  item.addEventListener("click", () => {
+    popup.classList.add("active");
+  });
+});
+closePop.addEventListener("click", () => {
+  popup.classList.remove("active");
+});
+
+// team owl
+$(".owl-carousel").owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: false,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 2,
+    },
+    1000: {
+      items: 4,
+    },
+  },
+});
+>>>>>>> fc33f26fe6090a7668e903625d862db43ab0a285
